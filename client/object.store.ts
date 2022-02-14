@@ -137,7 +137,7 @@ export abstract class ObjectStore<T extends CloudObject = any> extends ItemStore
     let items: T[] = [];
     if (cloudPlatform) {
       try {
-        const ws = this.userConfig.allowWorkspace || [];
+        const ws = this.userConfig?.allowWorkspace || [];
         if (this.userConfig.roleType == 3) {
           items = await this.loadItems2();
         } else {

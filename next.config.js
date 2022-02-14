@@ -37,20 +37,7 @@ module.exports = withPlugins(plugins, {
     // Important: return the modified config 可重写webpack配置
     return config;
   },
-  async redirects() {
-    const cloudurl = process.env.CLOUD_URL || 'localhost:8080';
-    let r = [];
-    if (process.env.NODE_ENV == 'development') {
-      r = [
-        {
-          source: '/watch',
-          destination: `http://${cloudurl}/watch`,
-          permanent: true,
-        },
-      ];
-    }
-    return r;
-  },
+
   async rewrites() {
     const cloudurl = process.env.CLOUD_URL || 'localhost:8080';
     let r = [];
@@ -69,6 +56,11 @@ module.exports = withPlugins(plugins, {
           source: '/api/:path*',
           destination: `http://${cloudurl}/:path*`,
         },
+        // use local nginx proxy
+        // {
+        //   source: '/watch',
+        //   destination: `http://${cloudurl}/watch`,
+        // },
       ];
     }
     return r;

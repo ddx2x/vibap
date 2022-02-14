@@ -181,7 +181,7 @@ export class ObjectWatchApi {
       return;
     }
     if ((data as IObjectWatchEvent).object) {
-      console.log("onMessage.emit", evt);
+      console.log("onMessage:", evt.type, evt.data.object);
       this.onData.emit(data);
     } else {
       if (typeof this.onRouteEvent === 'function') {
@@ -203,10 +203,10 @@ export class ObjectWatchApi {
         this.reconnect();
       }
     } else if (type.toLowerCase() === 'ping') {
-      console.log('onMessage: PING');
+      // console.log('onMessage: PING');
     } else if (type === 'STREAM_ERROR') {
       this.disconnect();
-      console.log('onMessage: STREAM_ERROR');
+      // console.log('onMessage: STREAM_ERROR');
     } else if (type === "USER_CONFIG") {
       // 用户信息经过 watch 推流
       // console.log('onMessage: update config');

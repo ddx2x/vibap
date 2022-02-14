@@ -73,7 +73,7 @@ export class UserConfig {
   }
 
   @computed get allowWorkspace() {
-    return this.allowWorkspaces.filter(ws => ws !== "");
+    return this.allowWorkspaces?.filter(ws => ws !== "") || [];
   }
 
   static get(): UserConfig {

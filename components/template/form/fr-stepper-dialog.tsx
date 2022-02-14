@@ -1,4 +1,4 @@
-import {FormInstance, WatchProperties} from '@lz/e-form-render';
+import { FormInstance, WatchProperties } from '@ddx2x/e-form-render';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -9,12 +9,12 @@ import Stack from '@mui/material/Stack';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Stepper from '@mui/material/Stepper';
-import {Breakpoint} from '@mui/material/styles';
+import { Breakpoint } from '@mui/material/styles';
 import Box from '@mui/system/Box';
-import {computed, observable} from 'mobx';
+import { computed, observable } from 'mobx';
 import React from 'react';
 import Notifications from '../notification';
-import {delay, FR} from './fr';
+import { delay, FR } from './fr';
 
 // schema
 type Schemas = {
